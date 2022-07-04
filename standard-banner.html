@@ -4,12 +4,27 @@
     <script src="https://assets.adobedtm.com/253f5bd08be2/5032e2df9891/launch-bc3421bc8941-development.min.js" async></script>
 
     <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- color picker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.js" integrity="sha512-1aNp9qKP+hKU/VJwCtYqJP9tdZWbMDN5pEEXXoXT0pTAxZq1HHZhNBR/dtTNSrHO4U1FsFGGILbqG1O9nl8Mdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.css" integrity="sha512-KuSX+43gVS5MEIJD2ewtrFPOHqC1PJnL8o2f5ciggPC0JUZ8XV0QXlfArO1mSzKkVFdRjsBDfrTU96C5SuRfqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.js"
+      integrity="sha512-1aNp9qKP+hKU/VJwCtYqJP9tdZWbMDN5pEEXXoXT0pTAxZq1HHZhNBR/dtTNSrHO4U1FsFGGILbqG1O9nl8Mdg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.css"
+      integrity="sha512-KuSX+43gVS5MEIJD2ewtrFPOHqC1PJnL8o2f5ciggPC0JUZ8XV0QXlfArO1mSzKkVFdRjsBDfrTU96C5SuRfqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- style sheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
@@ -20,8 +35,10 @@
   <body>
     <h1>Standard Popup Dialog</h1>
     <small>ver.22.07.04</small>
-    <p><p>
-    <input type="button" id="popup" value="Popup" data-toggle="tooltip" data-container="body" title="to test the pop-up dialog"/>
+    <p></p>
+    <p>
+      <input type="button" id="popup" value="Popup" data-toggle="tooltip" data-container="body" title="to test the pop-up dialog" />
+    </p>
 
     <div id="editor">
       <div id="preview"></div>
@@ -118,11 +135,18 @@
 
     <script>
       // Editor UI Setting ----------------------------------------------------------------------------------------------------
-      $("#image_url").change(   function() {$("#bannerImg").attr('src',$("#image_url").val());});
-      $("#link_url").change(    function() {$("#bannerLink").attr('href',$("#link_url").val());});
-      $("#generate").on('click',function() {$("#bannerSource").val("<" + "script>" + getGeneratedScript() + "</" + "script>");});
-      $("#popup").on('click',   function() {eval(getGeneratedScript());});
-
+      $("#image_url").change(function () {
+        $("#bannerImg").attr("src", $("#image_url").val());
+      });
+      $("#link_url").change(function () {
+        $("#bannerLink").attr("href", $("#link_url").val());
+      });
+      $("#generate").on("click", function () {
+        $("#bannerSource").val("<" + "script>" + getGeneratedScript() + "</" + "script>");
+      });
+      $("#popup").on("click", function () {
+        eval(getGeneratedScript());
+      });
 
       // html generate -----------------------------------------------------------------------------------------------------
       function refreshDialogHTML() {
@@ -132,8 +156,7 @@
         var bannerImg = $("#image_url").val();
         var bannerLink = $("#link_url").val();
 
-        var baseTempl =
-          `\
+        var baseTempl = `\
 <div id="ATbanner" style="position:relative;">
   <svg width="32" height="32" style="position:absolute; top:-8px;z-index: 9999; right:-12px;" data-name="closeBTN" id="closeBTN" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="62" stroke="none" fill="black"/><path stroke="none" fill="none" d="M64,0a64,64,0,1,0,64,64A64.07,64.07,0,0,0,64,0Zm0,122a58,58,0,1,1,58-58A58.07,58.07,0,0,1,64,122Z"/><path fill="white" d="M92.12,35.79a3,3,0,0,0-4.24,0L64,59.75l-23.87-24A3,3,0,0,0,35.88,40L59.76,64,35.88,88a3,3,0,0,0,4.25,4.24L64,68.25l23.88,24A3,3,0,0,0,92.13,88L68.24,64,92.13,40A3,3,0,0,0,92.12,35.79Z"/></svg>
   <a id="bannerLink" href="${bannerLink}" target="_blank">
@@ -151,8 +174,7 @@
   #ATbanner {width: 350px;}
 }
 </style>`;
-        $("#preview").html( baseTempl );
-
+        $("#preview").html(baseTempl);
       }
       refreshDialogHTML();
 
@@ -162,13 +184,12 @@
         return previewHTML.trim().replace(/\r?\n/g, ""); // remove newline code
       }
 
-
       // js generate -------------------------------------------------------------------------------------------------------
       function getGeneratedScript() {
         refreshDialogHTML();
         var startTime = $("#showStartTime").val();
         var endTime = $("#showEndTime").val();
-        if(!endTime) endTime=null;
+        if (!endTime) endTime = null;
         var showDialogFuncString = getShowDialogFunctions();
         var bannerHTML = getPopupDialogHTML();
         // need to generate js code without jquery
@@ -188,7 +209,7 @@ function getPopupDialogHTML() { return '${bannerHTML}' }
         var showScrollY = $("#showScrollY").val();
         var hideScrollY = $("#hideScrollY").val();
         // need to write the code without jQery and the other library.
-        var showDialogFuncString =           `
+        var showDialogFuncString = `
 pClosed=false;
 function showDialog() {
   var diaBaseElm = document.createElement("div");
@@ -219,9 +240,8 @@ function scrollShowHideCheck() {
   }
 }
 `;
-        return showDialogFuncString.replace(/\r?\n/g, "");//.replace(/\r?\n/g, "");
+        return showDialogFuncString.replace(/\r?\n/g, ""); //.replace(/\r?\n/g, "");
       }
-
     </script>
     <script>
       // for color picker
