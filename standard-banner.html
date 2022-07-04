@@ -1,0 +1,251 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://assets.adobedtm.com/253f5bd08be2/5032e2df9891/launch-bc3421bc8941-development.min.js" async></script>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- color picker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.js" integrity="sha512-1aNp9qKP+hKU/VJwCtYqJP9tdZWbMDN5pEEXXoXT0pTAxZq1HHZhNBR/dtTNSrHO4U1FsFGGILbqG1O9nl8Mdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.css" integrity="sha512-KuSX+43gVS5MEIJD2ewtrFPOHqC1PJnL8o2f5ciggPC0JUZ8XV0QXlfArO1mSzKkVFdRjsBDfrTU96C5SuRfqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- style sheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+    <script src="custom.js"></script>
+  </head>
+
+  <body>
+    <h1>Standard Popup Dialog</h1>
+    <small>ver.22.07.04</small>
+    <p><p>
+    <input type="button" id="popup" value="Popup" data-toggle="tooltip" data-container="body" title="to test the pop-up dialog"/>
+
+    <div id="editor">
+      <div id="preview"></div>
+      <div id="setting">
+        <form>
+          <table>
+            <tr>
+              <td>Image URL</td>
+              <td>
+                <input id="image_url" type="text" name="img_url" size="60" value="https://te2cjp.github.io/popupdialogeditor/img/AdobeStock_487161198xsmall.jpeg" />
+              </td>
+            </tr>
+            <tr>
+              <td>Link URL</td>
+              <td>
+                <input id="link_url" type="text" name="link_url" size="60" value="https://www.adobe.com/" />
+              </td>
+            </tr>
+            <tr>
+              <td>Background Color</td>
+              <td>
+                <input type="text" id="bk_color" name="bk_color" value="#D6563A" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr /></td>
+            </tr>
+            <tr>
+              <td>Scroll range to display</td>
+              <td><input id="showScrollY" type="text" name="showScrollY" size="6" value="0" /> % - <input id="hideScrollY" type="text" name="hideScrollY" size="6" value="100" /> %</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&</td>
+            </tr>
+            <tr>
+              <td>Display start - end time (milliseconds)</td>
+              <td><input id="showStartTime" type="text" name="showStartTime" size="6" value="500" /> ms - <input id="showEndTime" type="text" name="showEndTime" size="6" value="" /> ms</td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr /></td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <label>Display location for PC </label>
+              </td>
+              <td colspan="1">
+                <label>Display location for Smart Phone </label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <div class="banner-position">
+                  <input class="radiobtn" type="radio" id="lt" name="posLRTB" value="lt" /><label for="lt" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="ct" name="posLRTB" value="ct" /><label for="ct" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="rt" name="posLRTB" value="rt" /><label for="rt" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="lc" name="posLRTB" value="lc" /><label for="lc" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="cc" name="posLRTB" value="cc" /><label for="cc" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="rc" name="posLRTB" value="rc" /><label for="rc" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="lb" name="posLRTB" value="lb" /><label for="lb" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="cb" name="posLRTB" value="cb" /><label for="cb" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="rb" name="posLRTB" value="rb" checked /><label for="rb" class="position-item"></label>
+                </div>
+              </td>
+              <td colspan="2">
+                <div class="banner-position">
+                  <input class="radiobtn" type="radio" id="SPlt" name="SPposLRTB" value="lt" /><label for="SPlt" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPct" name="SPposLRTB" value="ct" /><label for="SPct" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPrt" name="SPposLRTB" value="rt" /><label for="SPrt" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPlc" name="SPposLRTB" value="lc" /><label for="SPlc" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPcc" name="SPposLRTB" value="cc" /><label for="SPcc" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPrc" name="SPposLRTB" value="rc" /><label for="SPrc" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPlb" name="SPposLRTB" value="lb" /><label for="SPlb" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPcb" name="SPposLRTB" value="cb" checked /><label for="SPcb" class="position-item"></label>
+                  <input class="radiobtn" type="radio" id="SPrb" name="SPposLRTB" value="rb" /><label for="SPrb" class="position-item"></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr /></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="button" value=" Code Generate " id="generate" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><textarea id="bannerSource" cols="120" rows="16"></textarea></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Editor UI Setting ----------------------------------------------------------------------------------------------------
+      $("#image_url").change(   function() {$("#bannerImg").attr('src',$("#image_url").val());});
+      $("#link_url").change(    function() {$("#bannerLink").attr('href',$("#link_url").val());});
+      $("#generate").on('click',function() {$("#bannerSource").val("<" + "script>" + getGeneratedScript() + "</" + "script>");});
+      $("#popup").on('click',   function() {eval(getGeneratedScript());});
+
+
+      // html generate -----------------------------------------------------------------------------------------------------
+      function refreshDialogHTML() {
+        var positionCSSString = positionCSS[$('input:radio[name="posLRTB"]:checked').val()];
+        var SPpositionCSSString = SPpositionCSS[$('input:radio[name="SPposLRTB"]:checked').val()];
+        var bk_color = $("#bk_color").val();
+        var bannerImg = $("#image_url").val();
+        var bannerLink = $("#link_url").val();
+
+        var baseTempl =
+          `\
+<div id="ATbanner" style="position:relative;">
+  <svg width="32" height="32" style="position:absolute; top:-8px;z-index: 9999; right:-12px;" data-name="closeBTN" id="closeBTN" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="62" stroke="none" fill="black"/><path stroke="none" fill="none" d="M64,0a64,64,0,1,0,64,64A64.07,64.07,0,0,0,64,0Zm0,122a58,58,0,1,1,58-58A58.07,58.07,0,0,1,64,122Z"/><path fill="white" d="M92.12,35.79a3,3,0,0,0-4.24,0L64,59.75l-23.87-24A3,3,0,0,0,35.88,40L59.76,64,35.88,88a3,3,0,0,0,4.25,4.24L64,68.25l23.88,24A3,3,0,0,0,92.13,88L68.24,64,92.13,40A3,3,0,0,0,92.12,35.79Z"/></svg>
+  <a id="bannerLink" href="${bannerLink}" target="_blank">
+    <img id="bannerImg" width="100%;" max-height="200px" src="${bannerImg}">
+  </a>
+</div>
+<style>
+#ATbanner {box-shadow: 0 0 16px gray;padding:10px;border-radius:10px; background:${bk_color}; } 
+@media screen and (min-width:769px) {
+  #ATDialogBase{z-index:9998; position:fixed; ${positionCSSString} display:flex;}
+  #ATbanner {width: 400px;}
+}
+@media screen and (max-width:768px) {
+  #ATDialogBase{z-index:9998; position:fixed; ${SPpositionCSSString} display:flex;}
+  #ATbanner {width: 350px;}
+}
+</style>`;
+        $("#preview").html( baseTempl );
+
+      }
+      refreshDialogHTML();
+
+      // generate HTML from preview. called from Editor UI and AT experience
+      function getPopupDialogHTML() {
+        var previewHTML = $("#preview").html();
+        return previewHTML.trim().replace(/\r?\n/g, ""); // remove newline code
+      }
+
+
+      // js generate -------------------------------------------------------------------------------------------------------
+      function getGeneratedScript() {
+        refreshDialogHTML();
+        var startTime = $("#showStartTime").val();
+        var endTime = $("#showEndTime").val();
+        if(!endTime) endTime=null;
+        var showDialogFuncString = getShowDialogFunctions();
+        var bannerHTML = getPopupDialogHTML();
+        // need to generate js code without jquery
+        var outputscript = `
+${showDialogFuncString};
+setTimeout(scrollShowHideCheck, ${startTime});
+var endTime = ${endTime};
+if(endTime){setTimeout(function(){document.body.removeChild(document.getElementById('ATDialogBase'));}, endTime);}
+window.addEventListener('scroll', function () {scrollShowHideCheck();});
+function getPopupDialogHTML() { return '${bannerHTML}' }
+`;
+        return outputscript;
+      }
+
+      // js for showdialog, scroll control
+      function getShowDialogFunctions() {
+        var showScrollY = $("#showScrollY").val();
+        var hideScrollY = $("#hideScrollY").val();
+        // need to write the code without jQery and the other library.
+        var showDialogFuncString =           `
+pClosed=false;
+function showDialog() {
+  var diaBaseElm = document.createElement("div");
+  var diaContentElm = document.createElement("div");
+  diaBaseElm.appendChild(diaContentElm);
+  diaBaseElm.addEventListener("click",function() {document.body.removeChild(this);pClosed=true;});
+  diaBaseElm.id ="ATDialogBase";
+  diaContentElm.innerHTML = getPopupDialogHTML();
+  document.body.appendChild(diaBaseElm);
+}
+showScrollPercent = ${showScrollY};
+hideScrollPercent = ${hideScrollY};
+showDiaFlg = false;
+function scrollShowHideCheck() {
+  scrollPercent = (window.pageYOffset==0)?0:(window.pageYOffset / (window.document.body.clientHeight - window.innerHeight)) * 100;
+  if ((scrollPercent==Infinity)||(scrollPercent < 0)) {
+    scrollYMax = window.document.body.scrollHeight - window.document.body.clientHeight;
+    scrollPercent = scrollYMax > 0 ? (window.scrollY / scrollYMax) * 100 : 100;
+    scrollPercent = scrollPercent > 100 ? 100 : scrollPercent;
+  }
+  if (!pClosed && !showDiaFlg && scrollPercent >= showScrollPercent && scrollPercent <= hideScrollPercent) {
+    showDialog();
+    showDiaFlg = true;
+  }
+  if (!pClosed && showDiaFlg && ( Math.floor(scrollPercent) > hideScrollPercent ||  Math.floor(scrollPercent) < showScrollPercent)) {
+    showDiaFlg = false;
+    document.body.removeChild(document.getElementById("ATDialogBase"));
+  }
+}
+`;
+        return showDialogFuncString.replace(/\r?\n/g, "");//.replace(/\r?\n/g, "");
+      }
+
+    </script>
+    <script>
+      // for color picker
+      $(document).ready(function () {
+        $("#bk_color").spectrum({
+          flat: false,
+          showAlpha: true,
+          showPalette: false,
+          showInitial: true,
+          chooseText: "Select",
+          cancelText: "Cancel",
+          showPaletteOnly: false,
+          showSelectionPalette: true,
+          preferredFormat: "rgb",
+          move: function (color) {
+            $("#ATbanner").css("background-color", color);
+          },
+          change: function (color) {
+            refreshDialogHTML();
+          },
+          color: "#D6563A",
+          showInput: true,
+        });
+      });
+    </script>
+  </body>
+</html>

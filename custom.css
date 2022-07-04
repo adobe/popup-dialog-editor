@@ -1,0 +1,39 @@
+body {
+    margin: 20px;
+}
+
+#editor {
+    display: flex;
+}
+#preview {
+    padding:20px;
+    border: 0px solid;
+}
+
+#setting {
+margin: 20px;
+}
+
+.banner-position {
+    display: flex;
+    width: 240px;
+    flex-wrap: wrap;
+    background-color: #eee;
+    border-radius: 8px;
+}
+.position-item {
+    width: 60px;
+    height: 40px;
+    background-color: #aaa;
+    margin: 10px;
+    border-radius: 4px;
+}
+.position-item:hover {
+    background-color: pink;
+}
+input:checked + label {
+    background-color: red;
+}
+.radiobtn {
+    display: none;
+}
